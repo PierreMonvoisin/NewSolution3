@@ -1,0 +1,62 @@
+#solveDetailsModal .modal-body {
+  height: auto;
+  min-width: 100%;
+  overflow-y: hidden;
+}
+/* No resize button on textarea */
+#solveDetailsModal textarea {
+  resize: none;
+}
+#singleDetails input[type='text'], textarea {
+  width: 100%;
+  background: transparent;
+  border: none;
+  outline: none;
+}
+#ao5Details input[type='text'] {
+  width: 100%;
+  background: transparent;
+  border: none;
+  outline: none;
+}
+#ao12Details input[type='text'] {
+  width: 100%;
+  background: transparent;
+  border: none;
+  outline: none;
+}
+#ao50Details input[type='text'] {
+  width: 100%;
+  background: transparent;
+  border: none;
+  outline: none;
+}
+#scrambleChosen {
+  font-size: 1.3rem;
+}
+#solveChosen {
+  font-size: 1.6rem;
+}
+#dateChosen {
+  font-size: 1.05rem;
+}
+#scrambleRepresentation {
+  width: 15vw;
+}
+#timeTools li {
+  font-size: 1.2rem;
+}
+#singleTab, #ao5Tab, #ao12Tab, #ao50Tab {
+  width: 100%;
+}
+#ao5Tab, #ao12Tab, #ao50Tab {
+  height: 49vh;
+  overflow-y: auto;
+  display: none;
+}
+/* Media queries */
+@media only screen and (max-width: 768px){
+  #scrambleRepresentation {
+    width: 30vw;
+  }
+}

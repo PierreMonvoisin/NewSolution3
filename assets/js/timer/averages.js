@@ -1,0 +1,275 @@
+var solves5 = [];
+// Calculation of the average of 5 solves
+function averageOf5(time){
+  var ao5 = 0;
+  // Add time to the average array
+  solves5.splice(0, 0, time);
+  // Check the length of the array solves5
+  if (solves5.length < 5){
+    // If there is less than 5 solves
+    ao5 = '-';
+  } else {
+    // Get the highest and lowest time ( and their index ) not to calculate them in the average
+    var maxValue = Math.max(...solves5);
+    // ' ... ' in front of an array will convert array values to distinct variables
+    var indexMaxValue = solves5.indexOf(Math.max(...solves5));
+    // Delete best time
+    solves5.splice(indexMaxValue, 1);
+    var minValue = Math.min(...solves5);
+    var indexMinValue = solves5.indexOf(Math.min(...solves5));
+    if (solves5.includes('DNF')){
+      var dnfNumber = 0;
+      for (var i = 0; i < solves5.length; i++){
+        if (solves5[i] == 'DNF'){
+          dnfNumber++;
+        }
+      }
+      if (dnfNumber == 1){
+        minValue = 'DNF';
+        indexMinValue = solves5.indexOf('DNF');
+      } else if (dnfNumber > 1){
+        return 'DNF';
+      }
+    }
+    solves5.splice(indexMinValue, 1);
+    // Add all values together
+    for (var i = 0; i < solves5.length; i++){
+      ao5 += solves5[i];
+    }
+    ao5 = Math.round(ao5 / 3);
+    solves5.splice(indexMinValue, 0, minValue);
+    solves5.splice(indexMaxValue, 0, maxValue);
+    // Delete 5th solve waiting for the next one
+    solves5.splice(solves5.length - 1, 1);
+  }
+  return ao5;
+}
+var solves12 = [];
+// Calculation of the average of 12 solves
+function averageOf12(time){
+  var ao12 = 0;
+  // Add time to the average array
+  solves12.splice(0, 0, time);
+  // Check the length of the array solves12
+  if (solves12.length < 12){
+    // If there is less than 12 solves
+    ao12 = '-';
+  } else {
+    // Get the highest and lowest time ( and their index ) not to calculate them in the average
+    var maxValue = Math.max(...solves12);
+    // ' ... ' in front of an array will convert array values to distinct variables
+    var indexMaxValue = solves12.indexOf(Math.max(...solves12));
+    // Delete best time
+    solves12.splice(indexMaxValue, 1);
+    var minValue = Math.min(...solves12);
+    var indexMinValue = solves12.indexOf(Math.min(...solves12));
+    if (solves12.includes('DNF')){
+      var dnfNumber = 0;
+      for (var i = 0; i < solves12.length; i++){
+        if (solves12[i] == 'DNF'){
+          dnfNumber++;
+        }
+      }
+      if (dnfNumber == 1){
+        minValue = 'DNF';
+        indexMinValue = solves12.indexOf('DNF');
+      } else if (dnfNumber > 1){
+        return 'DNF';
+      }
+    }
+    solves12.splice(indexMinValue, 1);
+    // Add all values together
+    for (var i = 0; i < solves12.length; i++){
+      ao12 += solves12[i];
+    }
+    ao12 = Math.round(ao12 / 11);
+    solves12.splice(indexMinValue, 0, minValue);
+    solves12.splice(indexMaxValue, 0, maxValue);
+    // Delete 12th solve waiting for the next one
+    solves12.splice(solves12.length - 1, 1);
+  }
+  return ao12;
+}
+var solves50 = [];
+// Calculation of the average of 50 solves
+function averageOf50(time){
+  var ao50 = 0;
+  // Add time to the average array
+  solves50.splice(0, 0, time);
+  // Check the length of the array solves50
+  if (solves50.length < 50){
+    // If there is less than 50 solves
+    ao50 = '-';
+  } else {
+    // Get the highest and lowest time ( and their index ) not to calculate them in the average
+    var maxValue = Math.max(...solves50);
+    // ' ... ' in front of an array will convert array values to distinct variables
+    var indexMaxValue = solves50.indexOf(Math.max(...solves50));
+    // Delete best time
+    solves50.splice(indexMaxValue, 1);
+    var minValue = Math.min(...solves50);
+    var indexMinValue = solves50.indexOf(Math.min(...solves50));
+    if (solves50.includes('DNF')){
+      var dnfNumber = 0;
+      for (var i = 0; i < solves50.length; i++){
+        if (solves50[i] == 'DNF'){
+          dnfNumber++;
+        }
+      }
+      if (dnfNumber == 1){
+        minValue = 'DNF';
+        indexMinValue = solves50.indexOf('DNF');
+      } else if (dnfNumber > 1){
+        return 'DNF';
+      }
+    }
+    solves50.splice(indexMinValue, 1);
+    // Add all values together
+    for (var i = 0; i < solves50.length; i++){
+      ao50 += solves50[i];
+    }
+    ao50 = Math.round(ao50 / 48);
+    solves50.splice(indexMinValue, 0, minValue);
+    solves50.splice(indexMaxValue, 0, maxValue);
+    // Delete 50th solve waiting for the next one
+    solves50.splice(solves50.length - 1, 1);
+  }
+  return ao50;
+}
+// Change set time into 'DNF' in averages array
+function dnfTimeInAverages(time){
+  // Get the time in milliseconds
+  var timeToDnf = formattedTimeToMilliseconds(time);
+  var indexToDnf = -1;
+  // If the solve array contains at least one solve
+  if (solves50.length > 0){
+    // Get the index of the solve
+    indexToDnf = solves50.indexOf(timeToDnf);
+    // Change value to 'DNF'
+    solves50[indexToDnf] = 'DNF';
+    // Reset index
+    indexToDnf = -1;
+  }
+  if (solves12.length > 0){
+    indexToDnf = solves12.indexOf(timeToDnf);
+    solves12[indexToDnf] = 'DNF';
+    indexToDnf = -1;
+  }
+  if (solves5.length > 0){
+    indexToDnf = solves5.indexOf(timeToDnf);
+    solves5[indexToDnf] = 'DNF';
+  }
+}
+// Add two seconds to set time in averages array
+function addTwoSecondsInAverages(time){
+  // Get the time in milliseconds
+  var timeToUpdate = formattedTimeToMilliseconds(time);
+  var indexToUpdate = -1;
+  // If the solve array contains at least one solve
+  if (solves50.length > 0){
+    // Get the index of the solve
+    indexToUpdate = solves50.indexOf(timeToUpdate);
+    // Add 2000 milliseconds to the time
+    solves50[indexToUpdate] = Number(solves50[indexToUpdate]) + 2000;
+    // Reset index
+    indexToUpdate = -1;
+  }
+  if (solves12.length > 0){
+    indexToUpdate = solves12.indexOf(timeToUpdate);
+    solves12[indexToUpdate] = Number(solves12[indexToUpdate]) + 2000;
+    indexToUpdate = -1;
+  }
+  if (solves5.length > 0){
+    indexToUpdate = solves5.indexOf(timeToUpdate);
+    solves5[indexToUpdate] = Number(solves5[indexToUpdate]) + 2000;
+  }
+}
+// Delete set time in averages array
+function deleteTimeInAverages(time, indexOfAverage){
+  // Get the time in milliseconds
+  var timeToFind = formattedTimeToMilliseconds(time);
+  var indexToDelete = -1;
+  // If the solve array contains at least one solve
+  if (solves50.length > 0){
+    // Get the index of the solve
+    indexToDelete = solves50.indexOf(timeToFind);
+    // If the solve is found, delete it
+    if (indexToDelete != -1){
+      solves50.splice(indexToDelete, 1);
+    }
+    // Reset index
+    indexToDelete = -1;
+  }
+  if (solves12.length > 0){
+    indexToDelete = solves12.indexOf(timeToFind);
+    if (indexToDelete != -1){
+      solves12.splice(indexToDelete, 1);
+    }
+    indexToDelete = -1;
+  }
+  if (solves5.length > 0){
+    indexToDelete = solves5.indexOf(timeToFind);
+    if (indexToDelete != -1){
+      solves5.splice(indexToDelete, 1);
+    }
+  }
+  // Get the first index outside of the array
+  var lastAo5Solve, lastAo12Solve, lastAo50Solve;
+  lastAo5Solve = lastAo12Solve = lastAo50Solve = 0;
+  if (indexOfAverage > 5){
+    lastAo5Solve = indexOfAverage - 5;
+    if (indexOfAverage > 12){
+      lastAo12Solve = indexOfAverage - 12;
+      if (indexOfAverage > 50){
+        lastAo50Solve = indexOfAverage - 50;
+      }
+    }
+  }
+  if (lastAo5Solve > 0){
+    var lastAo5 = $('#' + lastAo5Solve + ' .timeValue').html();
+    var lastAo5Value = $('#' + lastAo5Solve + ' .ao5Value').html();
+    // Check if the solve isn't a DNF, if so, add it to the end of the array
+    if (lastAo5Value != '-' && lastAo5 != 'DNF'){
+      lastAo5 = formattedTimeToMilliseconds(lastAo5);
+      solves5.splice(solves5.length - 1, 0, lastAo5);
+    }
+    if (lastAo12Solve > 0){
+      var lastAo12 = $('#' + lastAo12Solve + ' .timeValue').html();
+      var lastAo12Value = $('#' + lastAo12Solve + ' .ao12Value').html();
+      if (lastAo12Value != '-' && lastAo12 != 'DNF'){
+        lastAo12 = formattedTimeToMilliseconds(lastAo12);
+        solves12.splice(solves12.length - 1, 0, lastAo12);
+        if (lastAo50Solve > 0){
+          var lastAo50 = $('#' + lastAo50Solve + ' .timeValue').html();
+          var lastAo50Value = $('#' + lastAo50Solve + ' .ao50Value').html();
+          if (lastAo50Value != '-' && lastAo50 != 'DNF'){
+            lastAo50 = formattedTimeToMilliseconds(lastAo50);
+            solves50.splice(solves50.length - 1, 0, lastAo50);
+          }
+        }
+      }
+    }
+  }
+}
+// Local Storage Section //
+
+// Put a solve from the local storage to the averages array
+function fromLStoAverageArray_LS(time){
+  // If the local storage is available
+  if (typeof(Storage) != "undefined") {
+    // Transform time to milliseconds
+    var timeToInput = formattedTimeToMilliseconds(time);
+    // Add the correct amount of solve in each average array
+    if (solves5.length < 4){
+      solves5.push(timeToInput);
+    }
+    if (solves12.length < 11){
+      solves12.push(timeToInput);
+    }
+    if (solves50.length < 49){
+      solves50.push(timeToInput);
+    }
+  } else {
+    console.warn('Impossible d\'enregistrer les résolutions depuis le stockage local du navigateur !');
+  }
+}

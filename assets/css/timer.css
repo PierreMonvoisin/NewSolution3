@@ -1,0 +1,144 @@
+html, body {
+  max-width: 100vw;
+  scroll-behavior: smooth;
+  overflow: hidden;
+  font-family: 'Roboto', sans-serif;
+}
+/* Main container */
+#timerContainer {
+  width: 100vw;
+  height: 100vh;
+}
+#timerBody {
+  width: 100vw;
+  height: 100vh;
+}
+#sideTimer {
+  display: none;
+  height: 30vh;
+  width: 100%;
+  overflow: hidden;
+  position: fixed;
+  bottom: 0;
+  cursor: default;
+}
+/* Timer stats */
+#sideStats {
+  white-space: nowrap;
+  width: 33%;
+  height: 30vh;
+}
+#statsInMenu {
+  font-size: 1.25rem;
+  padding: 0.15rem 0 0.15rem 0;
+}
+#statsTable {
+  font-size: 1.25rem;
+  color: white;
+}
+/* History */
+#solveList {
+  font-size: 1.25rem;
+  width: 67%;
+  max-height: 30vh;
+  overflow-x: auto;
+  overflow-y: scroll;
+}
+.statsHr {
+  background-color: white;
+}
+/*Is not working*/
+#solveList td, #solveList th {
+  height: 10px;
+}
+#historyTbody {
+  color: white;
+}
+#historyTbody td {
+  border: 1px solid white;
+}
+#noSolve td {
+  border-bottom: 0;
+}
+/* Main scramble and timer */
+#scramble, #timer {
+  position: relative;
+}
+#scramble {
+  height: auto;
+  width: 100vw;
+  font-size: 2.5vw;
+  cursor: default;
+}
+#scramble span {
+  border: 1px solid black;
+  border-radius: 0.3rem;
+}
+#timer {
+  font-size: 14vw;
+  cursor: default;
+  white-space: nowrap;
+  /* font-family: 'Odibee Sans', cursive; */
+  font-family: 'Gugi', cursive;
+  /* font-family: 'Black Ops One', cursive; */
+}
+/* Hidden button */
+#controls {
+  display: none;
+}
+/* Media Queries */
+@media only screen and (max-width: 1200px) {
+  #scramble {
+    font-size: 3vw;
+  }
+}
+@media only screen and (max-width: 992px) {
+  #averageOf5, #averageOf12 {
+    font-size: 3.5vw;
+  }
+}
+@media only screen and (max-width: 880px) {
+  #sideTimer {
+    height: 50vh;
+  }
+  #sideStats {
+    width: 100vw;
+    height: 25vh;
+  }
+  #solveList {
+    width: 100vw;
+    height: 25vh;
+    font-size: 1.1rem;
+  }
+  #statsInMenu {
+    font-size: 1.1rem;
+  }
+  #statsTable {
+    font-size: 1.1rem;
+  }
+}
+@media only screen and (max-width: 768px) {
+  #averageOf5, #averageOf12 {
+    font-size: 6vw;
+  }
+}
+@media only screen and (max-width: 550px) {
+  #sideTimer {
+    height: 65vh;
+  }
+  #sideStats {
+    width: 100vw;
+    height: 30vh;
+  }
+  #solveList {
+    width: 100vw;
+    height: 35vh;
+    font-size: 1rem;
+  }
+  #statsInMenu {
+    font-size: 1rem;
+  }
+  #statsTable {
+    font-size: 1rem;
+  }
+}
