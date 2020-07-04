@@ -1,4 +1,4 @@
-<?php require '../share/forbiddenPages.php';
+<?php require_once '../share/forbiddenPages.php';
 require '../controller/personnalInfos_ctrl.php';
 // If the password is correct or the update form is validated
 if (! isset($_POST['updateConfirmation']) || $formValidity != true){ ?>

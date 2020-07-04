@@ -1,4 +1,4 @@
-<?php require '../share/forbiddenPages.php';
+<?php require_once '../share/forbiddenPages.php';
 function deleteUserStats($id){
   $statsStmtStatus = null; $statsStmt = null;
   // Initiate connection to database

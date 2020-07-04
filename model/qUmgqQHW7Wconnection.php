@@ -1,4 +1,4 @@
-<?php require '../share/forbiddenPages.php';
+<?php require_once '../share/forbiddenPages.php';
 function connectionToDatabase() {
   // Require the constants for the connection
   require_once 'kz17w4S5fOparameters.php';

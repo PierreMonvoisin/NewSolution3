@@ -1,4 +1,4 @@
-<?php require '../share/forbiddenPages.php';
+<?php require_once '../share/forbiddenPages.php';
 $saveAverageError = false; $saveAverageConfirmation = false; $saveAverageConfirmationMessage = 'ERROR'; $saveAverageErrorMessage = 'ERROR';
 // On form post and saveAo5, saveAo12 or saveAo50 button pressed
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && (isset($_POST['saveAo5']) || isset($_POST['saveAo12']) || isset($_POST['saveAo50']) )) {

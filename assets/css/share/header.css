@@ -20,11 +20,6 @@ header a:hover {
   height: 4vh;
   filter: brightness(0)invert(1);
 }
-@media only screen and (max-width: 576px){
-  #scrollButton img {
-    height: 6vh;
-  }
-}
 #scrollButton {
   background-color: #463730;
 }

@@ -1,4 +1,4 @@
-<?php require '../share/forbiddenPages.php';
+<?php require_once '../share/forbiddenPages.php';
 function validateUpdateInputs($name, $value){
   if ($name == 'username'){
     // Sanitize and validate the username

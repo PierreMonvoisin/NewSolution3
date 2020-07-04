@@ -2,7 +2,7 @@
 // Store user infos in session storage to use them on all pages
 require '../share/session.php';
 require '../controller/logOff_ctrl.php';
-require '../share/forbiddenPages.php';
+require_once '../share/forbiddenPages.php';
 include '../controller/saveSolve_ctrl.php';
 include '../controller/saveAverage_ctrl.php';
 require '../controller/updatePersonnalisations_ctrl.php'; ?>
@@ -29,12 +29,13 @@ require '../controller/updatePersonnalisations_ctrl.php'; ?>
         <button id="settingsButton" type="button" class="btn btn-light btn-block m-0 font-weight-bold">Paramètres</button>
       </div>
       <!-- Scramble -->
-      <div class="row text-center mb-0 mx-0 mt-xl-2 mt-lg-5 mt-5">
-        <h2 id="scramble" class="mt-4 main_font_color"><span class="py-2 px-2"></span></h2>
+      <div class="row mb-0 mx-0 mt-xl-2 mt-lg-5 mt-5">
+        <h2 id="scramble" class="mt-4 col-xl-10 col-lg-11 col-12 main_font_color"><span class="py-2 px-2"></span></h2>
+        <img id="reloadScramble" class="col-lg-1 col-12 pl-lg-0 ml-lg-0 mt-lg-4 mt-1" src="https://image.flaticon.com/icons/svg/929/929543.svg" alt="reload arrow" data-toggle="tooltip" data-placement="bottom" title="Changer de mélange">
       </div>
       <!-- Timer -->
       <div class="row text-center mx-auto">
-        <h1 class="p-0 m-0 timer_font main_font_color" id="timer">
+        <h1 class="px-0 m-0 timer_font main_font_color" id="timer">
           <span id="hours">00</span><span id="separatorHours">:</span>
           <span id="minutes">00</span><span id="separatorMinutes">:</span>
           <span id="seconds">00</span><span id="separatorSeconds">.</span>

@@ -1,9 +1,11 @@
 /* Set height of each li to take the whole page */
 #mainLesson li:not(.sectionTitle) {
   height: 20vh;
+  font-size: 120%;
 }
 #mainLesson .sectionTitle {
   font-weight: bold;
+  font-size: 125%;
 }
 /* Set the font color of the titles of the default page */
 .sectionTitle:not(.lastTitle) {

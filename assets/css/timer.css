@@ -5,6 +5,9 @@ html, body {
   font-family: 'Roboto', sans-serif;
 }
 /* Main container */
+#topButtons button {
+  font-size: 125%;
+}
 #timerContainer {
   width: 100vw;
   height: 100vh;
@@ -69,10 +72,15 @@ html, body {
   width: 100vw;
   font-size: 2.5vw;
   cursor: default;
+  text-align: right;
 }
 #scramble span {
   border: 1px solid black;
   border-radius: 0.3rem;
+}
+#reloadScramble {
+  height: 50px;
+  cursor: pointer;
 }
 #timer {
   font-size: 14vw;
@@ -81,6 +89,7 @@ html, body {
   /* font-family: 'Odibee Sans', cursive; */
   font-family: 'Gugi', cursive;
   /* font-family: 'Black Ops One', cursive; */
+  padding-top: 5vh;
 }
 /* Hidden button */
 #controls {
@@ -96,8 +105,26 @@ html, body {
   #averageOf5, #averageOf12 {
     font-size: 3.5vw;
   }
+  #timer {
+    font-size: 15vw;
+  }
+  #scramble {
+    font-size: 3.3vw;
+    text-align: center;
+  }
+  #scramble span {
+    border: 0;
+    border-radius: 0rem;
+  }
 }
 @media only screen and (max-width: 880px) {
+  #timer {
+    padding-top: 18vh;
+    padding-bottom: 13vh;
+  }
+  #reloadScramble {
+    height: 45px;
+  }
   #sideTimer {
     height: 50vh;
   }
@@ -119,10 +146,32 @@ html, body {
 }
 @media only screen and (max-width: 768px) {
   #averageOf5, #averageOf12 {
-    font-size: 6vw;
+    font-size: 5vw;
+  }
+  #reloadScramble {
+    height: 40px;
+  }
+  #scramble {
+    font-size: 4vw;
   }
 }
 @media only screen and (max-width: 550px) {
+  #topButtons button {
+    font-size: 115%;
+  }
+  #reloadScramble {
+    height: 35px;
+  }
+  #scramble {
+    font-size: 6vw;
+    line-height: 150%;
+  }
+  #timer {
+    font-size: 16vw;
+  }
+  #averageOf5, #averageOf12 {
+    font-size: 6.5vw;
+  }
   #sideTimer {
     height: 65vh;
   }

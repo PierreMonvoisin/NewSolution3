@@ -1,3 +1,4 @@
+<?php require_once '../share/forbiddenPages.php'; ?>
 <head>
   <title><?= $error['code'] ?> - <?= $error['message'] ?></title>
   <meta charset="UTF-8">

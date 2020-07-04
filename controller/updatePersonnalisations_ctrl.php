@@ -1,4 +1,4 @@
-<?php require '../share/forbiddenPages.php';
+<?php require_once '../share/forbiddenPages.php';
 $updateError = false; $udpateConfirmation = false; $udpateConfirmationMessage = 'ERROR'; $updateErrorMessage = 'ERROR';
 // On form post and submitChanges button pressed
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['submitChanges'])){

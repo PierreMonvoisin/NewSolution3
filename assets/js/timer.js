@@ -46,6 +46,10 @@ $(function(){
       clearStorage_LS();
     }
   });
+  $('#reloadScramble').click(function(){
+    // Change scramble on button click
+    $('#scramble span').text(scrambler());
+  })
   // settingsModal
   $('#settingsButton').click(function(){
     $('#settingsModal').modal('show');

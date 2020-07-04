@@ -1,4 +1,4 @@
-<?php require '../share/forbiddenPages.php';
+<?php require_once '../share/forbiddenPages.php';
 $loadError = false; $loadErrorMessage = 'ERROR';
 $displaySingle = false; $displayAverage = false;
 // If the user is connected

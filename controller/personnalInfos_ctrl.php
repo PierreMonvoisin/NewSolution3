@@ -1,4 +1,4 @@
-<?php require '../share/forbiddenPages.php';
+<?php require_once '../share/forbiddenPages.php';
 // For the update confirmation modal asking for the password //
 $formValidity = false; $error = false; $errorMessage = 'ERROR'; $mail = null; $confirmation = false; $confirmationMessage = 'ERROR';
 // Detect the name of the submit button of the update form query

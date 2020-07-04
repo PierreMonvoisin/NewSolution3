@@ -1,4 +1,4 @@
-<?php
+<?php require_once '../share/forbiddenPages.php';
 $errorCode = http_response_code();
 $acceptedErrors = [400, 401, 403, 404, 500];
 if (in_array($errorCode, $acceptedErrors)){

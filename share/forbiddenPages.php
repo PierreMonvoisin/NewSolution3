@@ -26,7 +26,7 @@ if ($pageName != false || $_SERVER['REQUEST_URI'] == '/'){
     } else {
       // If is not connected, check if the page is allowed for a random user
       if (in_array($pageName, $forbiddenDisconnectedPages)){
-        header('Location: ../view/signin.php');
+        header('Location: ../view/login.php');
       }
     }
   } else {

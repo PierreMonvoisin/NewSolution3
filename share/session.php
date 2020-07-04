@@ -1,4 +1,5 @@
 <?php
+require_once '../share/forbiddenPages.php';
 $personnalisationsArray = [];
 // Get avater url if user is connected and the session didn't start yet
 if (isset($_COOKIE['avatarUrl']) && ! empty($_COOKIE['avatarUrl'])){

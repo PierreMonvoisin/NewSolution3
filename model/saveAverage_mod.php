@@ -1,4 +1,4 @@
-<?php require '../share/forbiddenPages.php';
+<?php require_once '../share/forbiddenPages.php';
 function saveAverage($id, $average, $fullAverage, $averageArray, $dateTime) {
   $stmtStatus = null; $stmt = null;
   $best = '`best_ao'.$average.'`';
@@ -47,6 +47,6 @@ function saveAverage($id, $average, $fullAverage, $averageArray, $dateTime) {
       echo 'unknown error : ' .$e->getMessage();
     }
   }
-  // Return the statement return value 
+  // Return the statement return value
   return $stmtStatus;
 } ?>

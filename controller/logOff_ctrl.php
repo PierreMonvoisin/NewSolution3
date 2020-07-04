@@ -1,4 +1,4 @@
-<?php require '../share/forbiddenPages.php';
+<?php require_once '../share/forbiddenPages.php';
 // Log out
 function signOff(){
   // Set cookie for one minute to clear the localStorage in JS

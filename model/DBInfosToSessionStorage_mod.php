@@ -1,4 +1,4 @@
-<?php require '../share/forbiddenPages.php';
+<?php require_once '../share/forbiddenPages.php';
 function DBInfosToSessionStorage($url){
   // Initiate connection to database
   require_once 'qUmgqQHW7Wconnection.php';

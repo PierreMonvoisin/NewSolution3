@@ -1,4 +1,4 @@
-<?php require '../share/forbiddenPages.php';
+<?php require_once '../share/forbiddenPages.php';
 function validateAllPersonnalisationsInputs($colors, $mainFont, $timerFont, $displayTimer, $id_personnalisations){
   // Create the options array with the reg ex for the hex colors
   $hexValueOptions = ['options'=>['regexp'=>'/^#?([a-zA-Z\d]){6}$/']];

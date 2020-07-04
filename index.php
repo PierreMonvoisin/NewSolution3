@@ -43,7 +43,6 @@
   <script src="assets/js/share/getCookie.js"></script>
   <script src="assets/js/share/settings.js"></script>
   <script src="assets/js/script.js"></script>
-
   <script src="assets/js/share/localStorage/loadPersonnalisations.js"></script>
 </body>
 </html>
