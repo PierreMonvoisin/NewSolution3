@@ -2,7 +2,7 @@
   <!-- ! Always keep the " TopLeft " class in first ! -->
   <li class="TopLeft list-group-item bg-blue text-center sectionTitle m-0 py-1">Comment résoudre un rubik's cube</li>
   <li class="TopLeft list-group-item list-group-item-primary text-left main_font_color">
-    Vous pouvez trouver ici un tutoriel étape par étape pour apprendre à résoudre simplement un rubik’s cube 3x3x3.<br>Il est composé de définitions, descriptions et illustrations afin d’apprendre pas à pas à comprendre comment le rubik’s cube fonctionne et comment le résoudre.
+    Vous pouvez trouver ici un tutoriel étape par étape pour apprendre à résoudre simplement un rubik’s cube 3x3x3.<br>Il est composé de descriptions, images et illustrations afin de comprendre comment le rubik’s cube fonctionne et comment le résoudre.<br>Ce tutoriel est accessible à tous et ne requiert aucune connaissance dans le cube pour réussir à le suivre.
   </li>
   <li class="TopRight list-group-item bg-green text-center sectionTitle m-0 py-1">Algorithmes et conseils pour s'améliorer</li>
   <li class="TopRight list-group-item list-group-item-success text-right main_font_color">
@@ -10,10 +10,10 @@
   </li>
   <li class="BottomLeft list-group-item bg-secondary text-center sectionTitle m-0 py-1">Paramètres de personnalisation</li>
   <li class="BottomLeft list-group-item list-group-item-light text-left main_font_color">
-    Avec cet outil, vous pouvez personnaliser les éléments du site comme vous le voulez de façon permanente ou non.<br> Vous avez à disposition des polices, des couleurs et d’autres options qui seront appliqué sur tout le site et de façon permanente si vous vous connecter et vous les enregistrer. Des thèmes par défauts sont disponible si vous souhaitez un design déjà prêt.
+    Avec cet outil, vous pouvez personnaliser les éléments du site comme vous le voulez de façon permanente ou non.<br> Vous avez à disposition des polices, des couleurs et d’autres options qui seront appliquées sur tout le site et de façon permanente si vous vous connectez et vous les enregistrez. Des thèmes par défauts sont disponible si vous souhaitez un design déjà prêt.
   </li>
   <li class="BottomRight list-group-item bg-yellow text-center sectionTitle lastTitle m-0 py-1">Rechercher des algorithmes ou des leçons</li>
   <li class="BottomRight list-group-item list-group-item-warning text-right main_font_color">
-    Si vous souhaitez rechercher un cours, un algorithme ou un sujet précis sur le site, vous pouvez utiliser la barre de recherche disponible ici.
+    Si vous souhaitez rechercher un cours, un algorithme ou un sujet précis sur le site, vous pouvez utiliser la barre de recherche disponible ici.<br>Vous pouvez trouver facilement tout ce qu'il vous faut pour répondre à vos demandes.
   </li>
 </ul>

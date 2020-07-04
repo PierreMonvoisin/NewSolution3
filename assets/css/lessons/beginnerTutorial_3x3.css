@@ -5,39 +5,39 @@
   display: flex;
   height: auto;
   width: 100%;
+  flex-wrap: wrap;
+  justify-content: space-around;
 }
 .roofpig {
   width: 200px;
-  margin: 7%;
+  margin-top: 7%;
+  margin-bottom: 7%;
   border: 0 !important;
+  align-self: center;
 }
 .roofpig-picture {
-  height: 200px;
+  width: 200px;
   margin: 7%;
 }
-.wrap{
+.wrap {
   flex-wrap: wrap;
 }
- @media only screen and (max-width: 600px) {
-   .roofpig-container{
-     display: block;
-   }
-   .roofpig{
-     width:63vw;
-   }
-   .roofpig-picture{
-     margin: 7%;
-   }
- }
- @media only screen and (max-width: 1024px) {
-   .roofpig-container{
-     display: flex;
-     flex-wrap: wrap;
-   }
-   .roofpig{
-     width:23vw;
-   }
-   .roofpig-picture{
-     margin: 7%;
-   }
- }
+@media only screen and (max-width: 1024px) {
+  .roofpig {
+    width: 23vw;
+  }
+  .roofpig-picture {
+    width: 25vw;
+  }
+}
+@media only screen and (max-width: 600px) {
+  .roofpig-container {
+    flex-direction: column;
+  }
+  .roofpig {
+    width: 60vw;
+  }
+  .roofpig-picture {
+    width: 50vw;
+  }
+}

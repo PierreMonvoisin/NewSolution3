@@ -1,13 +1,30 @@
 /* Set height of each li to take the whole page */
 #mainLesson li:not(.sectionTitle) {
-  height: 20vh;
-  font-size: 120%;
+  height: 20.5vh;
+  font-size: 130%;
 }
 #mainLesson .sectionTitle {
   font-weight: bold;
-  font-size: 125%;
+  font-size: 135%;
 }
 /* Set the font color of the titles of the default page */
 .sectionTitle:not(.lastTitle) {
   color: white;
+}
+/* Media queries */
+@media only screen and (max-width: 660px) {
+  #mainLesson li:not(.sectionTitle) {
+    height: 32vh;
+    font-size: 110%;
+  }
+}
+@media only screen and (max-width: 500px) {
+  #mainLesson li:not(.sectionTitle) {
+    height: 40vh;
+  }
+}
+@media only screen and (max-width: 400px) {
+  #mainLesson li:not(.sectionTitle) {
+    height: 50vh;
+  }
 }

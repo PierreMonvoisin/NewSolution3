@@ -1,5 +1,5 @@
 <div id="BeginnerLesson3x3" class="container-fluid bg-white p-2">
-  <div class="row w-100">
+  <div class="row w-100 mx-auto">
     <div class="col-12 text-center">
       <h1 class="pt-3">Comment résoudre un Rubik's Cube 3x3</h1>
       <h2>- Méthode débutant -</h2>
@@ -31,7 +31,7 @@
         <img class="roofpig-picture" src="../assets/img/3x3_wrong_cross.png" alt="3x3 croix incorrect">
       </div>
       <p>Je vous donnes quelques suites de mouvements qui peuvent vous aider dans certains cas complexes, mais en général, cette étape est assez intuitive. Concentrez vous bien sur les centres autour de la face blanche, car ce sont eux qui vont décider de la couleur connectée à la face blanche.</p>
-      <div class="roofpig-container">
+      <div class="roofpig-container wrap">
         <div class="roofpig" data-config="colored=D*/e F B R L D|alg=U' F2|speed=1000|hover=none|pov=Dfl"></div>
         <div class="roofpig" data-config="colored=D*/e F B R L D|alg=U L F' L'|speed=1000|hover=none|pov=Dfl"></div>
         <div class="roofpig" data-config="colored=D*/e F B R L D|alg=F D' L D|speed=1000|hover=none|pov=Dfl"></div>
