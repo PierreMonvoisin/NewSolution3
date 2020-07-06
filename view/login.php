@@ -1,5 +1,5 @@
 <?php session_start();
-require_once '../share/forbiddenPages.php';
+require '../share/forbiddenPages.php';
 require '../controller/login_ctrl.php'; ?>
 <!DOCTYPE html>
 <html lang="fr" dir="ltr">

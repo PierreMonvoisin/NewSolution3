@@ -32,6 +32,7 @@ if (isset($_COOKIE['avatarUrl']) && ! empty($_COOKIE['avatarUrl'])){
       $_SESSION['mail'] = $userInfos['mail'];
       $_SESSION['avatar_url'] = $userInfos['avatar_url'];
       $_SESSION['id_personnalisations'] = $userInfos['id_personnalisations'];
+      var_dump($_SESSION);
       // Need to put all personnalisations informations into the JS and then the CSS
       $personnalisationsArray = ['main_font_color'=>$userInfos['main_font_color'],'secondary_font_color'=>$userInfos['secondary_font_color'],'main_background_color'=>$userInfos['main_background_color'],'secondary_background_color'=>$userInfos['secondary_background_color'],'header_background_color'=>$userInfos['header_background_color'],'stats_background_color'=>$userInfos['stats_background_color'],'display_timer'=>$userInfos['display_timer'],'main_font'=>$userInfos['main_font'],'timer_font'=>$userInfos['timer_font']];
     }

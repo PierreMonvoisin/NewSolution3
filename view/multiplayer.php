@@ -1,10 +1,9 @@
 <?php // Store user infos in session storage to use them on all pages
 require '../share/session.php';
-require_once '../share/forbiddenPages.php'; ?>
+require '../share/forbiddenPages.php'; ?>
 <!DOCTYPE html>
 <html lang="fr" dir="ltr">
 <head>
-  <!-- ³ = alt + 0179 -->
   <title>Multijoueurs - Solution³</title>
   <?php
   require '../share/requiredHeadTags.html';
@@ -22,7 +21,7 @@ require_once '../share/forbiddenPages.php'; ?>
         <div id="algoCard" class="card mb-0">
           <h3 class="card-header pt-2 text-center bg-blue secondary_font_color">Alg of the week</h3>
           <div class="card-body py-0 main_font_color">
-            <p class="card-title text-center border border-dark border-left-0 border-right-0 m-0">F' L B2 R D2 L2 D2 L' B2 D2 R' F2 R2 F' D' F' R2 D' B U2 F</p>
+            <p id="algorithm" class="card-title text-center border border-dark border-left-0 border-right-0 mb-0 mt-2">F' L B2 R D2 L2 D2 L' B2 D2 R' F2 R2 F' D' F' R2 D' B U2 F</p>
             <table class="table table-striped text-center main_font_color">
               <thead>
                 <tr>
@@ -60,19 +59,19 @@ require_once '../share/forbiddenPages.php'; ?>
             <ul class="list-group">
               <li class="list-group-item d-flex justify-content-between align-items-center main_font_color">
                 Pierre Monvoisin
-                <span class="badge badge-success">En ligne</span>
+                <span class="badge badge-success statusBadge">En ligne</span>
               </li>
               <li class="list-group-item d-flex justify-content-between align-items-center main_font_color">
                 Lily Dubas
-                <span class="badge badge-success">En ligne</span>
+                <span class="badge badge-success statusBadge">En ligne</span>
               </li>
               <li class="list-group-item d-flex justify-content-between align-items-center main_font_color">
                 Felix Zemdegs
-                <span class="badge badge-warning text-white">Inactif</span>
+                <span class="badge badge-warning statusBadge">Inactif</span>
               </li>
               <li class="list-group-item d-flex justify-content-between align-items-center main_font_color">
                 Max Park
-                <span class="badge badge-danger">Hors ligne</span>
+                <span class="badge badge-danger statusBadge">Hors ligne</span>
               </li>
             </ul>
           </div>

@@ -15,6 +15,9 @@ if ($pageName != false || $_SERVER['REQUEST_URI'] == '/'){
   }
   // If the page is recognized and allowed
   if (in_array($pageName, $allowedPages)){
+    if (empty($_COOKIE['PHPSESSID']) || ! isset($_SESSION['mail'])){
+      session_start();
+    }
     // Check is the user is connected
     isset($_SESSION['mail']) && ! empty(trim($_SESSION['mail'])) ? $mail = trim($_SESSION['mail']) : $mail = null;
     isset($_SESSION['id']) && ! empty(trim($_SESSION['id'])) ? $id = trim($_SESSION['id']) : $id = null;

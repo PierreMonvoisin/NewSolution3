@@ -2,7 +2,7 @@
 // Store user infos in session storage to use them on all pages
 require '../share/session.php';
 require '../controller/logOff_ctrl.php';
-require_once '../share/forbiddenPages.php';
+require '../share/forbiddenPages.php';
 require '../controller/updatePersonnalisations_ctrl.php'; ?>
 <!DOCTYPE html>
 <html lang="fr" dir="ltr">
