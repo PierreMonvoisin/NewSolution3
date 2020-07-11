@@ -13,6 +13,9 @@ $(function(){
   $('#cancelSignOff').click(function(){
     $('#signOffModal').modal('hide');
   });
+  $('#signOffConfirmation').click(function(){
+    clearStorage_LS();
+  })
   // settingsModal
   $('#settingsButton').click(function(){
     $('#settingsModal').modal('show');

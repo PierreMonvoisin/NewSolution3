@@ -9,7 +9,6 @@ include '../controller/loadSavedSolve_ctrl.php'; ?>
 <!DOCTYPE html>
 <html lang="fr" dir="ltr">
 <head>
-  <!-- ³ = alt + 0179 -->
   <title>Compte - Solution³</title>
   <?php
   require '../share/requiredHeadTags.html';

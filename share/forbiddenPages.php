@@ -15,7 +15,8 @@ if ($pageName != false || $_SERVER['REQUEST_URI'] == '/'){
   }
   // If the page is recognized and allowed
   if (in_array($pageName, $allowedPages)){
-    if (empty($_COOKIE['PHPSESSID']) || ! isset($_SESSION['mail'])){
+    // Check if session is started
+    if ($pageName == 'user.php' && session_status() == PHP_SESSION_NONE){
       session_start();
     }
     // Check is the user is connected
@@ -27,8 +28,12 @@ if ($pageName != false || $_SERVER['REQUEST_URI'] == '/'){
         header('Location: ../view/user.php');
       }
     } else {
-      // If is not connected, check if the page is allowed for a random user
-      if (in_array($pageName, $forbiddenDisconnectedPages)){
+      if (isset($_COOKIE['avatarUrl']) && ! empty($_COOKIE['avatarUrl'])){
+        if (in_array($pageName, $forbiddenConnectedPages)){
+          header('Location: ../view/user.php');
+        }
+      } else if (in_array($pageName, $forbiddenDisconnectedPages)){
+        // If is not connected, check if the page is allowed for a random user
         header('Location: ../view/login.php');
       }
     }

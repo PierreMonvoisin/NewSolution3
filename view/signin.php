@@ -1,10 +1,9 @@
-<?php session_start();
+<?php
 require '../share/forbiddenPages.php';
 require '../controller/signin_ctrl.php'; ?>
 <!DOCTYPE html>
 <html lang="fr" dir="ltr">
 <head>
-  <!-- ³ = alt + 0179 -->
   <title>Login - Solution³</title>
   <?php
   require '../share/requiredHeadTags.html';
@@ -15,10 +14,8 @@ require '../controller/signin_ctrl.php'; ?>
   <?php include '../share/header.php'; ?>
   <div class="container-fluid d-flex" id="loginContainer">
     <div class="card m-auto pt-3 shadow-lg" id="newUserCard">
-      <div class="bg-secondary mx-auto image-upload" id="avatarContainer">
-        <img class="card-img-top"
-        src="<?= $confirmation ? $userInfos['avatarUrl'] : '../share/visualcube.php?fmt=png&bg=t&pzl=3' ?>"
-        alt="login" id="topAvatar"/>
+      <div class="bg-secondary mx-auto d-flex image-upload" id="avatarContainer">
+        <img class="card-img-top m-auto" src="../assets/img/3x3_solved_simple.png" alt="solved cube" id="topAvatar" />
       </div>
       <div class="card-body">
         <h3 class="card-title text-center">Nouveau Compte</h3>

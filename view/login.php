@@ -1,4 +1,4 @@
-<?php session_start();
+<?php
 require '../share/forbiddenPages.php';
 require '../controller/login_ctrl.php'; ?>
 <!DOCTYPE html>

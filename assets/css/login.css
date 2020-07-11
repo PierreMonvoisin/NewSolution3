@@ -21,18 +21,28 @@ form .btn {
 /* For sign in page */
 /* User avatar */
 #avatarContainer {
-	border-radius: 25%;
-	width: auto;
+	border-radius: 35%;
+	height: 20vh;
+	width: 19vh;
 }
 #avatarContainer label:hover {
 	cursor: pointer;
 }
 #topAvatar {
-	border-radius: 50%;
-	height: 20vh;
-	width: 20vh;
+	height: 18vh;
+	width: 17vh;
 }
 /* Media Queries */
+@media only screen and (max-width: 1200px) {
+	#avatarContainer {
+		height: 18vh;
+		width: 17vh;
+	}
+	#topAvatar {
+		height: 16vh;
+		width: 15vh;
+	}
+}
 @media only screen and (max-width: 992px) {
 	.card {
 		width: 80vw;
@@ -45,5 +55,15 @@ form .btn {
 	}
 	.card {
 		width: 65vw;
+	}
+}
+@media only screen and (max-width: 600px) {
+	#avatarContainer {
+		height: 16vh;
+		width: 15vh;
+	}
+	#topAvatar {
+		height: 14vh;
+		width: 13vh;
 	}
 }

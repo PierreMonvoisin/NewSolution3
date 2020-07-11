@@ -66,7 +66,7 @@ $(function(){
           var userAvatarUrl = '../share/visualcube.php?' + 'fmt=png&' + 'bg=t&' + 'pzl=3&' + 'alg=' + scramble;
           // Set the status of the avatar as set
           $('#avatarUrl').val(JSON.stringify(userAvatarUrl));
-          document.cookie('avatarUrl='+ userAvatarUrl);
+          document.cookie('avatarUrl=' + userAvatarUrl);
           topAvatar = 'set';
           if (localStorage.getItem('storageAuthorization')){
             localStorage.setItem('userAvatarUrl', userAvatarUrl);
@@ -78,16 +78,4 @@ $(function(){
       $('.outputMessage').text(message);
     }
   });
-  // Sign off functions after redirection from user.php
-  // Check for the clearLocalStorage cookie to delete all solves from localStorage on logOut
-  if (getCookie('clearLocalStorage') != ''){
-    if (localStorage.getItem('storageAuthorization')){
-      if (localStorage.getItem('storageAuthorization') == 'true'){
-        localStorage.clear();
-        localStorage.setItem('storageAuthorization', 'true');
-      } else {
-        localStorage.clear();
-      }
-    }
-  }
 });
