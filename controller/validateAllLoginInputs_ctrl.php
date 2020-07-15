@@ -15,7 +15,7 @@ function validateAllLoginInputs($array){
   gettype($mail) != 'boolean' ?: $mail = null;
   // Create the options array with the reg ex for the password
   $passwordOptions = ['options'=>['regexp'=>'/^(?=.*[\d])(?=.*[A-Z])(?=.*[a-z])(?=.*[!@#$%^&*])?[\w!@#$%^&*]{8,}$/']];
-  $password = filter_var($password, FILTER_VALIDATE_REGEXP,$passwordOptions);
+  $password = filter_var($password, FILTER_VALIDATE_REGEXP, $passwordOptions);
   // If validate return boolean, set value as null
   gettype($password) != 'boolean' ?: $password = null;
   // If either mail or password value is null, return error message

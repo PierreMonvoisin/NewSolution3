@@ -1,12 +1,12 @@
 <?php require_once '../share/forbiddenPages.php';
 // For the update confirmation modal asking for the password //
-$formValidity = false; $error = false; $errorMessage = 'ERROR'; $mail = null; $confirmation = false; $confirmationMessage = 'ERROR';
+$formValidity = false; $error = false; $errorMessage = 'ERROR'; $email = null; $confirmation = false; $confirmationMessage = 'ERROR';
 // Detect the name of the submit button of the update form query
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['updateConfirmation'])){
-  $mail = $_SESSION['mail'] ?? null;
+  empty(trim($_SESSION['mail'])) ? $email = null : $email = trim($_SESSION['mail']);
   empty(trim($_POST['password'])) ? $password = null : $password = $_POST['password'];
   // If the mail was found in the session storage
-  if ($mail != null){
+  if ($email != null){
     // If the password input insn't empty
     if ($password != null){
       // Sanitize and validate password with same regex as the sign up form
@@ -17,7 +17,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['updateConfirmation'])
       if (gettype($password) != 'boolean'){
         require '../model/checkUserPassword_mod.php';
         // Get password from database
-        $userInfos = checkUserPassword($mail);
+        $userInfos = checkUserPassword($email);
         // If the data was received
         if (gettype($userInfos) != 'boolean'){
           // And if the password is correct
@@ -29,7 +29,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['updateConfirmation'])
             $error = true;
           }
         } else {
-          $errorMessage = 'Une erreur a été rencontré avec la base de donnée<br>Veuillez réessayer plus tard';
+          $errorMessage = 'Une erreur a été rencontrée avec la base de donnée<br>Veuillez réessayer plus tard';
           $error = true;
         }
       } else {
@@ -41,7 +41,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['updateConfirmation'])
       $error = true;
     }
   } else {
-    $errorMessage = 'Une erreur a été rencontré, veuillez vous déconnecter puis vous reconnecter';
+    $errorMessage = 'Une erreur a été rencontrée, veuillez vous déconnecter puis vous reconnecter';
     $error = true;
   }
 }
@@ -54,7 +54,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['confirmUpdateForm']))
   $validatedUsername = ''; $validatedPassword = '';
   $passwordHash = null; $set = []; $whichBind = null;
   // Check if all values are set and aren't empty
-  $mail = $_SESSION['mail'] ?? null;
+  // $email = $_SESSION['mail'] ?? null;
   empty(trim($_POST['updatePassword'])) ? $password = null : $password = $_POST['updatePassword'];
   empty(trim($_POST['confirmUpdatePassword'])) ? $passwordConfirmation = null : $passwordConfirmation = $_POST['confirmUpdatePassword'];
   empty(trim($_POST['updateUsername'])) ? $username = null : $username = $_POST['updateUsername'];
@@ -130,7 +130,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['confirmUpdateForm']))
     $values = ['password'=>$passwordHash, 'username'=>$validatedUsername];
     require '../model/updateUserInfos_mod.php';
     // Send the values to the database and get the return value and SQL statement
-    [$stmtStatus,$stmt] = updateUserInfos($mail, $set, $values, $whichBind);
+    [$stmtStatus,$stmt] = updateUserInfos($email, $set, $values, $whichBind);
     if ($stmtStatus){
       $updateConfirmationMessage = 'Vos modifications ont bien été enregistré !<br>Veuillez vous reconnecter';
       $updateConfirmation = true;

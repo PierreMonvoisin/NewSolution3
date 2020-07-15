@@ -1,16 +1,16 @@
 <?php require_once '../share/forbiddenPages.php';
-$personnalisationsArray = [];
+$personnalisationsArray = []; $userInfos = false;
 // Get avater url if user is connected and the session didn't start yet
 if (isset($_COOKIE['avatarUrl']) && ! empty($_COOKIE['avatarUrl'])){
     $userAvatarUrl = explode('alg=', $_COOKIE['avatarUrl']);
     $userScramble = array_pop($userAvatarUrl);
     // If the session isn't started or one of the value isn't set
-  if (! isset($_SESSION['avatar_url'])){
+  if (! isset($_SESSION['mail'])){
     if (session_status() == PHP_SESSION_NONE){
       session_start();
     }
     $url = $_COOKIE['avatarUrl'];
-    $avatarUrlOptions = ['options'=>['regexp'=>"/^(\.\.\/share\/visualcube\.php\?fmt=png&bg=t&pzl=3&alg=)+([A-Z2']{15,30})+$/"]];
+    $avatarUrlOptions = ['options'=>['regexp'=>"/^[A-Z2']{15,30}$/"]];
     if (! filter_var($url, FILTER_VALIDATE_REGEXP, $avatarUrlOptions)){
       return;
     }
@@ -21,8 +21,8 @@ if (isset($_COOKIE['avatarUrl']) && ! empty($_COOKIE['avatarUrl'])){
     if (gettype($userInfos) != 'boolean'){
       // Re-set the cookie
       $cookieName = 'avatarUrl'; $cookieValue = $userInfos['avatar_url'];
-      // Unix timestamp + (86400 seconds in a day * 7 to make a week)
-      $cookieExpDate = time() + (86400 * 7);
+      // Unix timestamp + (86400 seconds in a day * 7 to make a week * 4 to make a month * 4 to make it 4)
+      $cookieExpDate = time() + (86400 * 7 * 4 * 4);
       // Available on the whole website
       $cookiePath = '/';
       // Add simple information to get once the user already logged in
@@ -39,4 +39,5 @@ if (isset($_COOKIE['avatarUrl']) && ! empty($_COOKIE['avatarUrl'])){
   }
 } else {
   $userScramble = null;
-} ?>
+}
+?>

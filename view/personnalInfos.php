@@ -1,4 +1,4 @@
-<?php require '../share/forbiddenPages.php';
+<?php require_once '../share/forbiddenPages.php';
 require '../controller/personnalInfos_ctrl.php';
 // If the password is correct or the update form is validated
 if (! isset($_POST['updateConfirmation']) || $formValidity != true){ ?>
@@ -24,9 +24,9 @@ if (! isset($_POST['updateConfirmation']) || $formValidity != true){ ?>
             $fullMail = trim($_SESSION['mail']);
             $add = '<wbr>';
             $at = strpos($fullMail, '@');
-            $_SESSION['mail'] = substr_replace($fullMail, $add, $at, 0);
+            $displayMail = substr_replace($fullMail, $add, $at, 0);
           } ?>
-          <li class="list-group-item px-md-3 px-1"><?= $_SESSION['mail'] ?? 'john.doe@mail.com' ?></li>
+          <li class="list-group-item px-md-3 px-1"><?= $displayMail ?? 'john.doe@mail.com' ?></li>
           <li class="list-group-item px-md-3 px-1">••••••••</li>
         </ul>
       </div>

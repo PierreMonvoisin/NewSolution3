@@ -9,8 +9,8 @@ html {
   overflow-y: auto;
 }
 #topAvatar {
-  border-radius: 50%;
-  height: 17vh;
+  height: 150px;
+  width: 135px;
 }
 #userStats h4, #usernameTitle {
   color: white;

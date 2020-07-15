@@ -1,5 +1,5 @@
 <?php require_once '../share/forbiddenPages.php';
-function updateUserInfos($mail, $set, $values, $whichBind){
+function updateUserInfos($email, $set, $values, $whichBind){
   $stmtStatus = null; $stmt = null;
   // Initiate connection to database
   require_once 'qUmgqQHW7Wconnection.php';
@@ -16,7 +16,7 @@ function updateUserInfos($mail, $set, $values, $whichBind){
     } else if ($whichBind == 'username'){
       $stmt->bindParam(':username', $values['username'], PDO::PARAM_STR);
     }
-    $stmt->bindParam(':mail', $mail, PDO::PARAM_STR);
+    $stmt->bindParam(':mail', $email, PDO::PARAM_STR);
     // Execute query and get the return value in variable
     $stmtStatus = $stmt->execute();
   } catch (PDOException $e) {

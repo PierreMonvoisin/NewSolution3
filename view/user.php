@@ -20,9 +20,7 @@ include '../controller/loadSavedSolve_ctrl.php'; ?>
   <?php require '../share/header.php'; ?>
   <div class="container-fluid w-100">
     <div id="avatarHeader" class="row bg-taupe header_background_color">
-      <img id="topAvatar" class="mx-auto my-2 bg-light border border-dark"
-      src="<?= isset($_COOKIE['avatarUrl']) && !empty($_COOKIE['avatarUrl']) ? $_COOKIE['avatarUrl'] : '../share/visualcube.php?fmt=png&bg=t&pzl=3' ?>"
-      alt="Avatar Picture">
+      <div id="topAvatar" class="mx-auto my-2 roofpig border-0" data-config="setup=|hover=none"></div>
       <h1 id="usernameTitle" class="col-6 text-center my-auto pr-5 pl-0 secondary_font_color"><?= $_SESSION['username'] ?? 'Compte personnel' ?></h1>
     </div>
   </div>
@@ -200,5 +198,7 @@ include '../controller/loadSavedSolve_ctrl.php'; ?>
   <script src="../assets/js/share/localStorage/storePersonnalisations.js"></script>
   <script src="../assets/js/share/localStorage/loadPersonnalisations.js"></script>
   <script src="../assets/js/chart.js"></script>
+  <!-- Keep last -->
+  <script src="../assets/js/share/roofpig/roofpig_and_three.min.js"></script>
 </body>
 </html>

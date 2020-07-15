@@ -1,5 +1,5 @@
 <?php require_once '../share/forbiddenPages.php';
-function checkUserPassword($mail){
+function checkUserPassword($email){
   // Initiate connection to database
   require_once 'qUmgqQHW7Wconnection.php';
   $database = connectionToDatabase();
@@ -10,7 +10,7 @@ function checkUserPassword($mail){
       'SELECT `password` FROM `5VAyPO6OaNusers` WHERE `mail` = :mail'
     );
     // Bind parameter to its value with type specification
-    $stmt->bindParam(':mail', $mail, PDO::PARAM_STR);
+    $stmt->bindParam(':mail', $email, PDO::PARAM_STR);
     // Execute query
     $stmtStatus = $stmt->execute();
     // If the execute() return true, fetch all informations in associative array
@@ -23,5 +23,4 @@ function checkUserPassword($mail){
   } catch (PDOException $e) {
     echo $e->getMessage();
   }
-}
-?>
+} ?>
