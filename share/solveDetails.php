@@ -21,8 +21,7 @@
               <textarea id="scrambleChosen" class="text-center" rows="2" wrap="soft" name="scramble" value="U U D D L R L R B A Start" readonly></textarea>
             </div>
             <div class="d-md-flex col-12">
-              <div class="col-md-6 col-12 d-sm-block d-none text-center">
-                <img id="scrambleRepresentation" class="py-3" src="../share/visualcube.php?fmt=png&bg=t&pzl=3" alt="Scramble representation">
+              <div id="scrambleRepresentation" class="col-md-6 col-12 d-sm-block d-none">
               </div>
               <div class="col-md-6 col-12">
                 <div class="text-center pt-md-5 pt-3">

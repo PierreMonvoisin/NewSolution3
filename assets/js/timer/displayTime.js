@@ -63,7 +63,9 @@ function displaySolveDetails(id, time, scramble, scrambleRepresentation, dateTim
   $('#solveId span').text(id);
   $('#solveChosen').val(time);
   $('#scrambleChosen').val(scramble);
-  $('#scrambleRepresentation').attr('src', scrambleRepresentation);
+  var scrambleDataConfig = 'setupmoves=' + scrambleRepresentation + '|hover=none';
+  $('#scrambleRepresentation').empty();
+  CubeAnimation.create_in_dom('#scrambleRepresentation', scrambleDataConfig, "class='border-0 mx-auto'");
   $('#dateChosen').val(dateTime);
   $('#solveDetailsModal').modal('show');
 }

@@ -35,7 +35,7 @@ $(function(){
       var dateTime = $('#' + id + ' .indexValue').attr('id');
       var time = $('#' + id + ' .timeValue').html();
       var scramble = $('#' + id + ' .timeValue').attr('id');
-      var scrambleRepresentation = "../share/visualcube.php?fmt=png&bg=t&pzl=3&alg=" + scramble;
+      var scrambleRepresentation = scramble.replace(/([A-Z])/g, ' $1').trim();
       displaySolveDetails(id, time, scramble, scrambleRepresentation, dateTime);
     }
   });

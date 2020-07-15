@@ -79,8 +79,9 @@ html {
   background-color: #e9ecef;
   border-radius: 20px;
 }
-#solveRepresentation img {
+#solveRepresentation div {
   width: 100%;
+  height: auto;
 }
 #solveStats {
   color: white;

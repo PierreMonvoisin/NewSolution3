@@ -40,8 +40,9 @@
 #dateChosen {
   font-size: 1.05rem;
 }
-#scrambleRepresentation {
+#scrambleRepresentation > div {
   width: 15vw;
+  height: auto;
 }
 #timeTools li {
   font-size: 1.2rem;

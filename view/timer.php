@@ -9,7 +9,6 @@ require '../controller/updatePersonnalisations_ctrl.php'; ?>
 <!DOCTYPE html>
 <html lang="fr" dir="ltr">
 <head>
-  <!-- ³ = alt + 0179 -->
   <title>Timer - Solution³</title>
   <?php
   require '../share/requiredHeadTags.html';
@@ -135,5 +134,7 @@ require '../controller/updatePersonnalisations_ctrl.php'; ?>
   require '../share/localStorageScriptTags.html'; ?>
   <script src="../assets/js/timer.js"></script>
   <script src="../assets/js/share/localStorage/loadPersonnalisations.js"></script>
+  <!-- Keep last -->
+  <script src="../assets/js/share/roofpig/roofpig_and_three.min.js"></script>
 </body>
 </html>
