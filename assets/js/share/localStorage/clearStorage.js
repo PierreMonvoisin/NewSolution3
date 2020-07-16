@@ -8,7 +8,6 @@ function clearStorage_LS(){
     } else {
       localStorage.clear();
     }
-    location.reload();
   } else {
     console.warn('Impossible d\'effacer les résolutions dans le stockage local du navigateur !');
   }

@@ -1,6 +1,7 @@
 <?php require_once '../share/forbiddenPages.php';
 // For the update confirmation modal asking for the password //
 $formValidity = false; $error = false; $errorMessage = 'ERROR'; $email = null; $confirmation = false; $confirmationMessage = 'ERROR';
+$deleteLS = false;
 // Detect the name of the submit button of the update form query
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['updateConfirmation'])){
   empty(trim($_SESSION['mail'])) ? $email = null : $email = trim($_SESSION['mail']);
@@ -54,7 +55,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['confirmUpdateForm']))
   $validatedUsername = ''; $validatedPassword = '';
   $passwordHash = null; $set = []; $whichBind = null;
   // Check if all values are set and aren't empty
-  // $email = $_SESSION['mail'] ?? null;
+  if (empty(trim($email)) || $email == null){
+    if (! empty(trim($_SESSION['mail']))){
+      $email = trim($_SESSION['mail']);
+    } else {
+      $email = null;
+    }
+  }
   empty(trim($_POST['updatePassword'])) ? $password = null : $password = $_POST['updatePassword'];
   empty(trim($_POST['confirmUpdatePassword'])) ? $passwordConfirmation = null : $passwordConfirmation = $_POST['confirmUpdatePassword'];
   empty(trim($_POST['updateUsername'])) ? $username = null : $username = $_POST['updateUsername'];
@@ -134,8 +141,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['confirmUpdateForm']))
     if ($stmtStatus){
       $updateConfirmationMessage = 'Vos modifications ont bien été enregistré !<br>Veuillez vous reconnecter';
       $updateConfirmation = true;
-      header('refresh:0.5;url=login.php');
+      $deleteLS = true;
       signOff();
+      header('refresh:0.5;url=login.php');
     }
   }
 } ?>

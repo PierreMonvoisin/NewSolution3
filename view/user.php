@@ -190,14 +190,19 @@ include '../controller/loadSavedSolve_ctrl.php'; ?>
   <script src="../assets/js/personnalInfos.js"></script>
   <script src="../assets/js/averageLoaded.js"></script>
   <script type="text/javascript">
-  <?php
+  <?php // Get personnalisations from PHP to JS
   $personnalisationsJSArray = json_encode($personnalisationsArray);
-  echo 'var userPersonnalisations = ' .$personnalisationsJSArray. ';';
-  ?>
+  echo 'var userPersonnalisations = ' .$personnalisationsJSArray. ';'; ?>
   </script>
   <script src="../assets/js/share/localStorage/storePersonnalisations.js"></script>
   <script src="../assets/js/share/localStorage/loadPersonnalisations.js"></script>
   <script src="../assets/js/chart.js"></script>
+  <script type="text/javascript">
+  <?php // Delete the local storage when the user log off
+  if ($deleteLS){
+    echo 'clearStorage_LS();';
+  } ?>
+  </script>
   <!-- Keep last -->
   <script src="../assets/js/share/roofpig/roofpig_and_three.min.js"></script>
 </body>
