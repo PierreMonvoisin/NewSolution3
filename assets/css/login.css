@@ -30,7 +30,7 @@ form .btn {
 	width: 17vh;
 }
 /* Media Queries */
-@media only screen and (max-height: 800px) {
+@media only screen and (max-width: 576px) and (max-height: 800px) {
 	#avatarContainer {
 		display: none !important;
 	}

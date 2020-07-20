@@ -48,7 +48,7 @@ require '../controller/login_ctrl.php'; ?>
               <button type="submit" name="loginSubmit" class="btn btn-success mr-1" disabled>Se connecter</button>
               <button type="submit" formaction="signin.php" class="btn btn-info">Créer votre compte</button>
             </div>
-            <a href="#!" class="offset-md-5 mx-auto pt-3">Mot de passe oublié ?</a>
+            <a href="#" data-toggle="modal" data-target="#forgotPasswordModal" class="offset-md-5 mx-auto pt-3">Mot de passe oublié ?</a>
           </div>
         </form>
       </div>
@@ -56,6 +56,8 @@ require '../controller/login_ctrl.php'; ?>
   </div>
   <?php // Local storage authorization modal
   include '../share/userAuthorization.php';
+  // Forgotten password modal
+  include '../share/forgotPassword.php';
   // Required scripts
   require '../share/requiredScriptTags.html'; ?>
   <script src="../assets/js/share/inputsValidations.js"></script>
