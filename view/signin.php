@@ -18,7 +18,7 @@ require '../controller/signin_ctrl.php'; ?>
         <img class="card-img-top m-auto" src="../assets/img/3x3_solved_simple.png" alt="solved cube" id="topAvatar" />
       </div>
       <div class="card-body">
-        <h3 class="card-title text-center">Nouveau Compte</h3>
+        <h3 class="card-title text-center mb-3">Nouveau Compte</h3>
         <!-- Display the error message if there is one -->
         <?php if ($error) { ?>
           <h4 class="text-center"><?= $errorMessage ?></h4>
@@ -29,7 +29,7 @@ require '../controller/signin_ctrl.php'; ?>
         <?php } ?>
         <form id="newUserForm" action="signin.php" method="post" autocomplete="on">
           <label for="avatarUrl" class="sr-only">Url de votre avatar</label>
-          <input type="text" name="avatarUrl" id="avatarUrl" class="invisible">
+          <input type="hidden" name="avatarUrl" id="avatarUrl">
           <!-- Username input -->
           <div class="form-group row">
             <label for="username" class="col-xl-3 col-form-label">Nom d'utilisateur</label>

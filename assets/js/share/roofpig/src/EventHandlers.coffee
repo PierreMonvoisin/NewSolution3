@@ -26,6 +26,7 @@ class EventHandlers
   @initialize: ->
     return if @initialized
 
+    # Commented to avoid keypress handlers conflicts
     $('body').keydown (e) -> EventHandlers.key_down(e)
     $('body').keyup   (e) -> EventHandlers.key_up(e)
 
@@ -50,7 +51,7 @@ class EventHandlers
 
   @mouse_down: (e, clicked_cube_id) ->
     @dom.remove_help()
-    
+
     if clicked_cube_id == @focus().id
       @bend_start_x = e.pageX
       @bend_start_y = e.pageY

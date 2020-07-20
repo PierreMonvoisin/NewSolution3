@@ -25,14 +25,16 @@ form .btn {
 	height: 20vh;
 	width: 19vh;
 }
-#avatarContainer label:hover {
-	cursor: pointer;
-}
 #topAvatar {
 	height: 18vh;
 	width: 17vh;
 }
 /* Media Queries */
+@media only screen and (max-height: 800px) {
+	#avatarContainer {
+		display: none !important;
+	}
+}
 @media only screen and (max-width: 1200px) {
 	#avatarContainer {
 		height: 18vh;
@@ -52,9 +54,6 @@ form .btn {
 	form .btn {
 		width: 100%;
 		margin-top: 1%;
-	}
-	.card {
-		width: 65vw;
 	}
 }
 @media only screen and (max-width: 600px) {

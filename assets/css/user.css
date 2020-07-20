@@ -77,7 +77,7 @@ html {
 #solveRepresentation {
   width: 50%;
   background-color: #e9ecef;
-  border-radius: 20px;
+  border-radius: 5px;
 }
 #solveRepresentation div {
   width: 100%;
@@ -86,7 +86,7 @@ html {
 #solveStats {
   color: white;
 }
-#solveTime{
+#solveTime {
   font-size: 1.2rem;
 }
 #savedAverage {
@@ -98,6 +98,7 @@ html {
 }
 #savedAverage .averageLoaded {
   height: auto;
+  border-radius: 5px;
 }
 /* Settings modal */
 #settingsModal {

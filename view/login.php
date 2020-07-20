@@ -4,7 +4,6 @@ require '../controller/login_ctrl.php'; ?>
 <!DOCTYPE html>
 <html lang="fr" dir="ltr">
 <head>
-  <!-- ³ = alt + 0179 -->
   <title>Login - Solution³</title>
   <?php
   require '../share/requiredHeadTags.html';
@@ -15,6 +14,9 @@ require '../controller/login_ctrl.php'; ?>
   <?php include '../share/header.php'; ?>
   <div class="container d-flex" id="loginContainer">
     <div class="card m-auto pt-3 shadow-lg" id="loginCard">
+      <div class="bg-secondary mx-auto d-flex image-upload" id="avatarContainer">
+        <img class="card-img-top m-auto" src="../assets/img/3x3_solved_simple.png" alt="solved cube" id="topAvatar" />
+      </div>
       <div class="card-body">
         <h3 class="card-title text-center mb-4">Connexion</h3>
         <!-- Display the error message if there is one -->
@@ -42,11 +44,11 @@ require '../controller/login_ctrl.php'; ?>
           </div>
           <!-- Buttons -->
           <div class="form-group row">
-            <div class="col-xl-9 offset-xl-3 d-flex">
+            <div class="col-xl-9 offset-xl-3 d-md-flex">
               <button type="submit" name="loginSubmit" class="btn btn-success mr-1" disabled>Se connecter</button>
               <button type="submit" formaction="signin.php" class="btn btn-info">Créer votre compte</button>
             </div>
-            <a href="#!" class="offset-md-5 offset-3 pt-3">Mot de passe oublié ?</a>
+            <a href="#!" class="offset-md-5 mx-auto pt-3">Mot de passe oublié ?</a>
           </div>
         </form>
       </div>
