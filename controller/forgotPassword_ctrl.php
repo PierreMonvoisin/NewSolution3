@@ -10,7 +10,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['requestNewPassword'])
         $subject = 'Demande de réinitialisation du mot de passe';
         $title = 'password_reset';
         require '../controller/sendMail_ctrl.php';
-        sendMail($mail, $subject, $title);
+        [$mailStatus, $options] = sendMail($mail, $subject, $title);
+        if ($mailStatus){
+          $_SESSION['randomCode'] = $options['randomCode'];
+          $_SESSION['temporaryMail'] = $mail;
+          var_dump($_SESSION);
+        }
       }
     }
   }
