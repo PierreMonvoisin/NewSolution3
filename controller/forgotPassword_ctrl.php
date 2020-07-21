@@ -7,8 +7,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['requestNewPassword'])
     if (filter_var($mail, FILTER_VALIDATE_EMAIL)){
       require '../model/checkUserValidity_mod.php';
       if (checkUserValidity($mail)){
+        $subject = 'Demande de réinitialisation du mot de passe';
+        $title = 'password_reset';
         require '../controller/sendMail_ctrl.php';
-        sendMail($mail);
+        sendMail($mail, $subject, $title);
       }
     }
   }
