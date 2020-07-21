@@ -21,13 +21,18 @@ form .btn {
 /* For sign in page */
 /* User avatar */
 #avatarContainer {
-	border-radius: 35%;
+	border-radius: 5px;
 	height: 20vh;
 	width: 19vh;
 }
 #topAvatar {
 	height: 18vh;
 	width: 17vh;
+}
+/* Forgotten password modal */
+#mailInputContainer {
+	padding-top: 5vh;
+	padding-bottom: 5vh;
 }
 /* Media Queries */
 @media only screen and (max-width: 576px) and (max-height: 800px) {

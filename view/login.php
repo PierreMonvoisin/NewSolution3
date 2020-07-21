@@ -1,6 +1,7 @@
 <?php
 require '../share/forbiddenPages.php';
-require '../controller/login_ctrl.php'; ?>
+require '../controller/login_ctrl.php';
+require '../controller/forgotPassword_ctrl.php'; ?>
 <!DOCTYPE html>
 <html lang="fr" dir="ltr">
 <head>
