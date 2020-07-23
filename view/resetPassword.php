@@ -1,6 +1,9 @@
 <?php
+if (session_status() == PHP_SESSION_NONE){
+  session_start();
+}
 require '../share/forbiddenPages.php';
-var_dump($_POST); ?>
+require '../controller/resetPassword_ctrl.php'; ?>
 <!DOCTYPE html>
 <html lang="fr" dir="ltr">
 <head>
@@ -24,33 +27,33 @@ var_dump($_POST); ?>
           <div class="form-group row">
             <label for="codeNb1" class="sr-only">Premier caractère</label>
             <div class="col-2">
-              <input name="codeNb1" type="text" class="form-control text-center" id="codeNb1">
+              <input name="codeNb1" type="text" class="form-control text-center" id="codeNb1" maxlength="1">
             </div>
             <label for="codeNb2" class="sr-only">Second caractère</label>
             <div class="col-2">
-              <input name="codeNb2" type="text" class="form-control text-center" id="codeNb2">
+              <input name="codeNb2" type="text" class="form-control text-center" id="codeNb2" maxlength="1">
             </div>
             <label for="codeNb3" class="sr-only">Troisième caractère</label>
             <div class="col-2">
-              <input name="codeNb3" type="text" class="form-control text-center" id="codeNb3">
+              <input name="codeNb3" type="text" class="form-control text-center" id="codeNb3" maxlength="1">
             </div>
             <label for="codeNb4" class="sr-only">Quatrième caractère</label>
             <div class="col-2">
-              <input name="codeNb4" type="text" class="form-control text-center" id="codeNb4">
+              <input name="codeNb4" type="text" class="form-control text-center" id="codeNb4" maxlength="1">
             </div>
             <label for="codeNb5" class="sr-only">Cinquième caractère</label>
             <div class="col-2">
-              <input name="codeNb5" type="text" class="form-control text-center" id="codeNb5">
+              <input name="codeNb5" type="text" class="form-control text-center" id="codeNb5" maxlength="1">
             </div>
             <label for="codeNb6" class="sr-only">Sixième caractère</label>
             <div class="col-2">
-              <input name="codeNb6" type="text" class="form-control text-center" id="codeNb6">
+              <input name="codeNb6" type="text" class="form-control text-center" id="codeNb6" maxlength="1">
             </div>
           </div>
         </form>
         <div class="row">
           <div class="col-8 mx-auto">
-            <button type="submit" form="resetCode" class="btn btn-success btn-block">Valider le code</button>
+            <button type="submit" form="resetCode" id="submitCodeButton" class="btn btn-success btn-block" disabled>Valider le code</button>
           </div>
         </div>
       </div>

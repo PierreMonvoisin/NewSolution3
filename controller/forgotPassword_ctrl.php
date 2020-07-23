@@ -12,7 +12,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['requestNewPassword'])
         require '../controller/sendMail_ctrl.php';
         [$mailStatus, $options] = sendMail($mail, $subject, $title);
         if ($mailStatus){
-          $_SESSION['randomCode'] = $options['randomCode'];
+          if (session_status() == PHP_SESSION_NONE){
+            session_start();
+          }
+          $_SESSION['randomCode'] = password_hash($options['randomCode'], PASSWORD_BCRYPT);
           $_SESSION['temporaryMail'] = $mail;
           header('Location:resetPassword.php');
         }
