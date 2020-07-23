@@ -14,7 +14,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['requestNewPassword'])
         if ($mailStatus){
           $_SESSION['randomCode'] = $options['randomCode'];
           $_SESSION['temporaryMail'] = $mail;
-          var_dump($_SESSION);
+          header('Location:resetPassword.php');
         }
       }
     }

@@ -6,7 +6,7 @@ $pageName = explode('?', array_pop($pagePath))[0];
 $pageNameOptions = ['options'=>['regexp'=>'/^([a-zA-Z_-]{3,35})(\.php)$/']];
 $pageName = filter_var($pageName, FILTER_VALIDATE_REGEXP, $pageNameOptions);
 // Declare all pages allowed in the filter
-$allowedPages = ['/', 'index.php', 'timer.php', 'learningMenu.php', 'multiplayer.php', 'signin.php', 'login.php', 'user.php'];
+$allowedPages = ['/', 'index.php', 'timer.php', 'learningMenu.php', 'multiplayer.php', 'signin.php', 'login.php', 'user.php', 'resetPassword.php'];
 $forbiddenConnectedPages = ['signin.php', 'login.php'];
 $forbiddenDisconnectedPages = ['user.php'];
 if ($pageName != false || $_SERVER['REQUEST_URI'] == '/'){

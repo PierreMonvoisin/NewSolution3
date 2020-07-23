@@ -1,6 +1,7 @@
 <?php
 // Set parameters for random code
 $characters = '1223445667889ABCDEFGHIJKLMNPQRSTUVWXYZ';
+// 1 544 804 416 combinaitions possible with a six characters string
 $charactersLength = strlen($characters);
 $randomCode = '';
 // Create a random code of 6 alphanumeric characters
