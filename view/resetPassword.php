@@ -40,7 +40,12 @@ require '../controller/resetPassword_ctrl.php'; ?>
           </form>
         <?php } else { ?>
           <h3 class="card-title text-center mb-3">Réinitialisation du mot de passe</h3>
-          <p class="text-center">Nous vous avons envoyé un mail à [MAIL] avec un code à six caractères. Merci de le copier dans cette page afin de confirmer votre mail et changer votre mot de passe.</p>
+          <p class="text-center">Nous vous avons envoyé un mail à <?= $userMail ?? 'votre mail' ?> avec un code à six caractères. Merci de le copier dans cette page afin de confirmer votre mail et changer votre mot de passe.</p>
+          <?php if ($codeError) { ?>
+            <h4 class="text-center mt-2"><?= $codeErrorMessage ?></h4>
+          <?php } else if ($resetError) ?>
+            <h4 class="text-center mt-2"><?= $resetErrorMessage ?></h4>
+          <?php } ?>
           <form action="#" method="post" class="py-3" id="resetCode">
             <div class="form-group row">
               <label for="codeNb1" class="sr-only">Premier caractère</label>

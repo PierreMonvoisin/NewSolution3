@@ -25,6 +25,8 @@ require '../controller/forgotPassword_ctrl.php'; ?>
           <h4 class="text-center"><?= $errorMessage ?></h4>
         <?php } else if  ($confirmation) { ?>
           <h4 class="text-center"><?= $confirmationMessage ?></h4>
+        <?php } else if ($resetError){ ?>
+          <h4 class="text-center"><?= $resetErrorMessage ?></h4>
         <?php } else { ?>
           <h4 class="text-center outputMessage"></h4>
         <?php } ?>
