@@ -23,18 +23,21 @@ require '../controller/resetPassword_ctrl.php'; ?>
       <div class="card-body">
         <?php if ($codeValid){ ?>
           <h3 class="card-title text-center mb-3">Entrez votre nouveau mot de passe</h3>
+          <?php if ($resetError) { ?>
+            <h4 class="text-center text-danger mt-2"><?= $resetErrorMessage ?></h4>
+          <?php } ?>
           <form class="pt-3" action="#" method="post" id="resetPasswordForm">
             <div class="form-group mb-1 row">
-              <label for="password" class="col-6 text-center p-1">Veuillez entrer un nouveau mot de passe</label>
-              <div class="col-6 my-2 pr-5">
+              <label for="password" class="col-md-6 col-12 text-center px-md-0">Veuillez entrer un nouveau mot de passe</label>
+              <div class="col-md-6 col-12 my-2 pr-md-5">
                 <input class="w-100" type="password" name="password" id="password">
               </div>
-              <label for="passwordConfirmation" class="col-6 text-center">Veuillez confirmer votre mot de passe</label>
-              <div class="col-6 my-2 pr-5">
+              <label for="passwordConfirmation" class="col-md-6 col-12 text-center">Veuillez confirmer votre mot de passe</label>
+              <div class="col-md-6 col-12 my-2 pr-md-5">
                 <input class="w-100" type="password" name="passwordConfirmation" id="passwordConfirmation">
               </div>
-              <div class="col-12 mt-4">
-                <button type="submit" id="submitPasswordChange" class="btn btn-success btn-block">Changer votre mot de passe</button>
+              <div class="col-12 mt-sm-4 mt-2">
+                <input name="resetPasswordButton" value="Changer votre mot de passe" type="submit" id="submitPasswordChange" class="btn btn-success btn-block">
               </div>
             </div>
           </form>
@@ -42,34 +45,32 @@ require '../controller/resetPassword_ctrl.php'; ?>
           <h3 class="card-title text-center mb-3">Réinitialisation du mot de passe</h3>
           <p class="text-center">Nous vous avons envoyé un mail à <?= $userMail ?? 'votre mail' ?> avec un code à six caractères. Merci de le copier dans cette page afin de confirmer votre mail et changer votre mot de passe.</p>
           <?php if ($codeError) { ?>
-            <h4 class="text-center mt-2"><?= $codeErrorMessage ?></h4>
-          <?php } else if ($resetError) ?>
-            <h4 class="text-center mt-2"><?= $resetErrorMessage ?></h4>
+            <h4 class="text-center text-danger mt-2"><?= $codeErrorMessage ?></h4>
           <?php } ?>
           <form action="#" method="post" class="py-3" id="resetCode">
             <div class="form-group row">
               <label for="codeNb1" class="sr-only">Premier caractère</label>
-              <div class="col-2">
+              <div class="col-2 inputContainer">
                 <input name="codeNb1" type="text" class="form-control text-center" id="codeNb1" maxlength="1">
               </div>
               <label for="codeNb2" class="sr-only">Second caractère</label>
-              <div class="col-2">
+              <div class="col-2 inputContainer">
                 <input name="codeNb2" type="text" class="form-control text-center" id="codeNb2" maxlength="1">
               </div>
               <label for="codeNb3" class="sr-only">Troisième caractère</label>
-              <div class="col-2">
+              <div class="col-2 inputContainer">
                 <input name="codeNb3" type="text" class="form-control text-center" id="codeNb3" maxlength="1">
               </div>
               <label for="codeNb4" class="sr-only">Quatrième caractère</label>
-              <div class="col-2">
+              <div class="col-2 inputContainer">
                 <input name="codeNb4" type="text" class="form-control text-center" id="codeNb4" maxlength="1">
               </div>
               <label for="codeNb5" class="sr-only">Cinquième caractère</label>
-              <div class="col-2">
+              <div class="col-2 inputContainer">
                 <input name="codeNb5" type="text" class="form-control text-center" id="codeNb5" maxlength="1">
               </div>
               <label for="codeNb6" class="sr-only">Sixième caractère</label>
-              <div class="col-2">
+              <div class="col-2 inputContainer">
                 <input name="codeNb6" type="text" class="form-control text-center" id="codeNb6" maxlength="1">
               </div>
             </div>

@@ -41,7 +41,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['codeNb6'])) {
   }
 }
 // When the user submit its new password
-if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['password'])) {
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['resetPasswordButton'])) {
   // Get the password and the password confirmation from the form submitted
   isset($_POST['password']) && ! empty(trim($_POST['password'])) ? $password = trim($_POST['password']) : $password = null;
   isset($_POST['passwordConfirmation']) && ! empty(trim($_POST['passwordConfirmation'])) ? $passwordConfirmation = trim($_POST['passwordConfirmation']) : $passwordConfirmation = null;
